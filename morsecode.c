@@ -14,18 +14,14 @@ void setup() {
 void loop() {
   // turn the LED on (HIGH is the voltage level)
   int basetime = 200;
-  digitalWrite(1, HIGH);
-  delay(basetime);               // wait for a second
-  // turn the LED off by making the voltage LOW
-  digitalWrite(1, LOW); 
-  delay(basetime);               // wait for a second
-  digitalWrite(1, HIGH);
-  delay(basetime);               // wait for a second
-  // turn the LED off by making the voltage LOW
-  digitalWrite(1, LOW); 
-  delay(basetime);               // wait for a second
-  digitalWrite(1, HIGH);
-  delay(basetime);               // wait for a second
+  bool toggle = true;
+  for (int i = 0, i<4, i++)//Compress code
+  {
+     digitalWrite(1, toggle);
+     delay(basetime); 
+     toggle = !toggle;
+  }
+ 
   // turn the LED off by making the voltage LOW
   digitalWrite(1, LOW); 
   delay(3*basetime);               // wait for a second
